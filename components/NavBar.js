@@ -1,6 +1,43 @@
 import styles from '../styles/NavBar.module.scss'
+import Link from 'next/link'
+import {useRouter} from 'next/router'
 
 const NavBar = () => {
+    const navLinks = [
+        {
+            to: '/',
+            name: 'Home',
+            icon: 'bx-home',
+        },
+        {
+            to: '/about',
+            name: 'About',
+            icon: 'bx-user',
+        },
+        {
+            to: '/resume',
+            name: 'Resume',
+            icon: 'bx-file-blank',
+        },
+        {
+            to: '/portfolio',
+            name: 'Portfolio',
+            icon: 'bx-book-content',
+        },
+        {
+            to: '/services',
+            name: 'Services',
+            icon: 'bx-server',
+        },
+        {
+            to: '/contact',
+            name: 'Contact',
+            icon: 'bx-envelope',
+        },
+    ]
+
+    const router = useRouter()
+
     return (
         <>
             <button type="button" className={`${styles.mobileNavToggle} d-xl-none`}>
@@ -23,15 +60,21 @@ const NavBar = () => {
 
                     <nav className={styles.navMenu}>
                         <ul>
-                            <li className="active"><a href="#"><i className="bx bx-home"/> <span>Home</span></a>
-                            </li>
-                            <li><a href="#"><i className="bx bx-user"/> <span>About</span></a></li>
-                            <li><a href="#"><i className="bx bx-file-blank"/> <span>Resume</span></a></li>
-                            <li><a href="#"><i className="bx bx-book-content"/> Portfolio</a></li>
-                            <li><a href="#"><i className="bx bx-server"/> Services</a></li>
-                            <li><a href="#"><i className="bx bx-envelope"/> Contact</a></li>
+                            {navLinks.map((navLink) => {
+                                return (
+                                    <li key={navLink.name}
+                                        className={router.pathname === navLink.to ? styles.active : ''}>
+                                        <Link href={navLink.to}>
+                                            <a>
+                                                <i className={`bx ${navLink.icon}`}/> <span>{navLink.name}</span>
+                                            </a>
+                                        </Link>
+                                    </li>
+                                )
+                            })}
                         </ul>
                     </nav>
+
                     <button type="button" className={`${styles.mobileNavToggle} d-xl-none`}><i
                         className="icofont-navigation-menu"/></button>
                 </div>
