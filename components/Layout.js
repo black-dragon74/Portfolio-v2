@@ -1,6 +1,7 @@
 import Header from './Header'
 import NavBar from './NavBar'
 import PropTypes from 'prop-types'
+import ScrollToTop from './ScrollToTop'
 
 const Layout = ({title, children}) => {
     return (
@@ -10,6 +11,9 @@ const Layout = ({title, children}) => {
 
             {/* There goes all the children */}
             {children}
+
+            {/* Shown and hidden automatically on scroll events */}
+            <ScrollToTop/>
         </>
     )
 }

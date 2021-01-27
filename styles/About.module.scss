@@ -31,3 +31,89 @@
 
   }
 }
+
+.facts {
+  padding-bottom: 30px;
+
+  .countBox {
+    padding: 30px;
+    width: 100%;
+
+    i {
+      display: block;
+      font-size: 44px;
+      color: #149ddd;
+      float: left;
+    }
+
+    span {
+      font-size: 48px;
+      line-height: 40px;
+      display: block;
+      font-weight: 700;
+      color: #050d18;
+      margin-left: 60px;
+    }
+
+    p {
+      padding: 15px 0 0 0;
+      margin: 0 0 0 60px;
+      font-family: "Raleway", sans-serif;
+      font-size: 14px;
+      color: #122f57;
+    }
+
+    a {
+      font-weight: 600;
+      display: block;
+      margin-top: 20px;
+      color: #122f57;
+      font-size: 15px;
+      font-family: "Poppins", sans-serif;
+      transition: ease-in-out 0.3s;
+
+      &:hover {
+        color: #1f5297;
+      }
+    }
+  }
+}
+
+.skills {
+  .progress {
+    height: 50px;
+    display: block;
+    background: none;
+    overflow: hidden;
+    line-height: 0;
+    font-size: .75rem;
+    border-radius: .25rem;
+
+    .skill {
+      padding: 10px 0;
+      margin: 0 0 6px 0;
+      text-transform: uppercase;
+      display: block;
+      font-weight: 600;
+      font-family: "Poppins", sans-serif;
+      color: #050d18;
+
+      .val {
+        float: right;
+        font-style: normal;
+      }
+    }
+  }
+
+  .progressBarWrap {
+    background: #dce8f8;
+  }
+
+  .progressBar {
+    width: 1px;
+    height: 10px;
+    transition: .9s;
+    background-color: #149ddd;
+  }
+}
+
