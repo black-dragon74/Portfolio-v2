@@ -1,5 +1,4 @@
 import styles from '../styles/NavBar.module.scss'
-import Image from "next/image";
 
 const NavBar = () => {
     return (
@@ -10,7 +9,7 @@ const NavBar = () => {
 
             <header id={styles.header}>
                 <div className="d-flex flex-column">
-                    <div className={styles["profile"]}>
+                    <div className={styles.profile}>
                         <img src='/assets/img/profile-img.jpg' className={"rounded-circle img-fluid"} alt="Profile"/>
                         <h1 className="text-light"><a href="#">Nick</a></h1>
                         <div className={`${styles.socialLinks} mt-3 text-center`}>
