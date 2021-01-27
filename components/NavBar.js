@@ -36,6 +36,14 @@ const NavBar = () => {
         },
     ]
 
+    const socialLinks = {
+        twitter: 'https://twitter.com/ydvnick',
+        github: 'https://github.com/black-dragon74',
+        instagram: 'https://www.instagram.com/ydvnick',
+        telegram: 'https://t.me/ydvnick',
+        linkedin: 'https://www.linkedin.com/in/niraj-kumar-yadav-94b0aa102',
+    }
+
     const router = useRouter()
 
     return (
@@ -50,11 +58,11 @@ const NavBar = () => {
                         <img src='/assets/img/profile-img.jpg' className={"rounded-circle img-fluid"} alt="Profile"/>
                         <h1 className="text-light"><a href="#">Nick</a></h1>
                         <div className={`${styles.socialLinks} mt-3 text-center`}>
-                            <a href="#" className="twitter"><i className="bx bxl-twitter"/></a>
-                            <a href="#" className="facebook"><i className="bx bxl-facebook"/></a>
-                            <a href="#" className="instagram"><i className="bx bxl-instagram"/></a>
-                            <a href="#" className="google-plus"><i className="bx bxl-skype"/></a>
-                            <a href="#" className="linkedin"><i className="bx bxl-linkedin"/></a>
+                            <a href={socialLinks.twitter} target="_blank" className={styles.twitter}><i className="bx bxl-twitter"/></a>
+                            <a href={socialLinks.github} target="_blank" className={styles.github}><i className="bx bxl-github"/></a>
+                            <a href={socialLinks.instagram} target="_blank" className={styles.instagram}><i className="bx bxl-instagram"/></a>
+                            <a href={socialLinks.telegram} target="_blank" className={styles.telegram}><i className="bx bxl-telegram"/></a>
+                            <a href={socialLinks.linkedin} target="_blank" className={styles.linkedin}><i className="bx bxl-linkedin"/></a>
                         </div>
                     </div>
 

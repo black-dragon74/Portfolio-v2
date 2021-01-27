@@ -6,6 +6,13 @@ import InnerViewHolder from '../components/InnerViewHolder'
 const About = () => {
     const title = "About me"
 
+    const ageCalc = () => {
+        const dob = new Date("09/07/1998")
+        const mdiff = new Date(Date.now() - dob.getTime())
+
+        return Math.abs(mdiff.getUTCFullYear() - 1970).toString()
+    }
+
     const bioData = [
         {
             title: 'Birthday',
@@ -25,7 +32,7 @@ const About = () => {
         },
         {
             title: 'Age',
-            value: '22'
+            value: ageCalc() + ' years'
         },
         {
             title: 'Degree',

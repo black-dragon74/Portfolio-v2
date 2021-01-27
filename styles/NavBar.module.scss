@@ -41,7 +41,6 @@
       }
     }
 
-    // TODO: Add brand specific colors/gradients on hover
     .socialLinks {
       a {
         font-size: 18px;
@@ -61,6 +60,18 @@
           background: #149ddd;
           color: base.$white;
           text-decoration: none;
+        }
+
+        &:hover.github {
+          background: #333;
+        }
+
+        &:hover.linkedin {
+          background: #2867B2;
+        }
+
+        &:hover.instagram {
+          background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
         }
       }
     }
