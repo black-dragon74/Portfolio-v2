@@ -1,11 +1,14 @@
 import Header from './Header'
 import NavBar from './NavBar'
 
-const Layout = () => {
+const Layout = ({children}) => {
     return (
         <>
-            <Header />
-            <NavBar />
+            <Header/>
+            <NavBar/>
+
+            {/* There goes all the children */}
+            {children}
         </>
     )
 }

@@ -5,11 +5,10 @@ const Home = () => {
     return (
         <Layout>
             {/* This is the main page, wrapped in layout, which contains all the necessary overlays */}
-            <section id="hero" className="d-flex flex-column justify-content-center align-items-center">
+            <section id={styles.hero} className="d-flex flex-column justify-content-center align-items-center">
                 <div className="hero-container" data-aos="fade-in">
-                    <h1>Alex Smith</h1>
-                    <p>I'm <span className="typed"
-                                 data-typed-items="Designer, Developer, Freelancer, Photographer"></span></p>
+                    <h1>Niraj Yadav</h1>
+                    <p>I'm <span>Groot</span></p>
                 </div>
             </section>
         </Layout>
