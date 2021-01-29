@@ -3,6 +3,7 @@
 //  Meant to be used in all views except the `Hero`
 //
 import styles from '../styles/InnerViewHolder.module.scss'
+import PropTypes from 'prop-types'
 
 const InnerViewHolder = ({children}) => {
     return (
@@ -10,6 +11,10 @@ const InnerViewHolder = ({children}) => {
             {children}
         </main>
     )
+}
+
+InnerViewHolder.propTypes = {
+    children: PropTypes.object.isRequired
 }
 
 export default InnerViewHolder
