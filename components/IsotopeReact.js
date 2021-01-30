@@ -1,21 +1,25 @@
-import {useEffect, useState} from 'react'
+import {useEffect, useState, useRef} from 'react'
 import PropTypes from 'prop-types'
 import styles from '../styles/Portfolio.module.scss'    // Yes, this is intended
 const IsoTope = process.browser ? require('isotope-layout') : undefined // Hack to prevent exceptions when running on server side
+import imagesLoaded from 'imagesloaded'
 
 const IsotopeReact = ({items}) => {
     const [filterKey, setFilterKey] = useState('*')
     const [isotope, setIsotope] = useState(null)
+    const gridRef = useRef(null)
 
     // Get unique slugs from the list of items
     const filters = Array.from(new Set(items.map(({slug}) => slug)))
 
     useEffect(() => {
-        setIsotope(
-            new IsoTope('.portfolio-container', {
-                itemSelector: '.iso-holder',
-                layoutMode: 'fitRows'
-            })
+        imagesLoaded(gridRef.current, () =>
+            setIsotope(
+                new IsoTope('.portfolio-container', {
+                    itemSelector: '.iso-holder',
+                    layoutMode: 'fitRows'
+                })
+            )
         )
     }, [])   // Run this only once pls
 
@@ -50,7 +54,7 @@ const IsotopeReact = ({items}) => {
                 </div>
             </div>
 
-            <div className="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
+            <div className="row portfolio-container" data-aos="fade-up" data-aos-delay="100" ref={gridRef}>
                 {items.map((item) => {
                     return (
                         <div className={`col-lg-4 col-md-6 iso-holder ${styles.portfolioItem} ${item.slug}`} key={item.imgSrc}>
