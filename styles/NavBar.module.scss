@@ -167,18 +167,4 @@ header.header {
   }
 }
 
-.mobileNavActive {
-  overflow: hidden;
-
-  header.header {
-    left: 0;
-  }
-
-  .mobileNavToggle {
-    i {
-      color: base.$white;
-    }
-  }
-}
-
 // End mobile nav

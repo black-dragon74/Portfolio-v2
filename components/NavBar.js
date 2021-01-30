@@ -1,6 +1,7 @@
 import styles from '../styles/NavBar.module.scss'
 import Link from 'next/link'
 import {useRouter} from 'next/router'
+import {useState} from 'react'
 
 const NavBar = () => {
     const navLinks = [
@@ -45,11 +46,13 @@ const NavBar = () => {
     }
 
     const router = useRouter()
+    const [mNavActive, setmNavActive] = useState(false)
+    const handleNavToggle = () => setmNavActive((x) => !x)
 
     return (
-        <>
-            <button type="button" className={`${styles.mobileNavToggle} d-xl-none`}>
-                <i className={"icofont-navigation-menu"}/>
+        <div className={`nav-container ${mNavActive ? 'mobileNavActive' : ''}`}>
+            <button type="button" className={`${styles.mobileNavToggle} mobileNavToggle d-xl-none`} onClick={handleNavToggle}>
+                <i className={mNavActive ? 'icofont-close' : 'icofont-navigation-menu'}/>
             </button>
 
             <header id="header" className={styles.header}>
@@ -82,12 +85,9 @@ const NavBar = () => {
                             })}
                         </ul>
                     </nav>
-
-                    <button type="button" className={`${styles.mobileNavToggle} d-xl-none`}><i
-                        className="icofont-navigation-menu"/></button>
                 </div>
             </header>
-        </>
+        </div>
     )
 }
 
