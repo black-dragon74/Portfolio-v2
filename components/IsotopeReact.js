@@ -1,8 +1,10 @@
 import {useEffect, useState, useRef} from 'react'
 import PropTypes from 'prop-types'
 import styles from '../styles/Portfolio.module.scss'    // Yes, this is intended
-const IsoTope = process.browser ? require('isotope-layout') : undefined // Hack to prevent exceptions when running on server side
+import IsoTope from 'isotope-layout'
 import imagesLoaded from 'imagesloaded'
+import 'venobox/venobox/venobox.min.css'
+import 'venobox/venobox/venobox.min'
 
 const IsotopeReact = ({items}) => {
     const [filterKey, setFilterKey] = useState('*')
@@ -13,6 +15,10 @@ const IsotopeReact = ({items}) => {
     const filters = Array.from(new Set(items.map(({slug}) => slug)))
 
     useEffect(() => {
+        document.querySelectorAll('.venobox').forEach((ele) => {
+            $(ele).venobox();
+        })
+
         imagesLoaded(gridRef.current, () =>
             setIsotope(
                 new IsoTope('.portfolio-container', {
@@ -61,6 +67,9 @@ const IsotopeReact = ({items}) => {
                             <div className={styles.portfolioWrap}>
                                 <img src={item.imgSrc} className="img-fluid" alt=""/>
                                 <div className={styles.portfolioLinks}>
+                                    <a href={item.imgSrc} title="Enlarge Image" className={"venobox"} data-gall={item.slug}>
+                                        <i className="bx bx-plus-circle"/>
+                                    </a>
                                     <a href={item.more} title="More Details">
                                         <i className="bx bx-right-arrow-circle"/>
                                     </a>

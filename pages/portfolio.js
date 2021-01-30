@@ -1,7 +1,7 @@
+import dynamic from 'next/dynamic'
 import Layout from '../components/Layout'
 import styles from '../styles/Portfolio.module.scss'
 import InnerViewHolder from '../components/InnerViewHolder'
-import IsotopeReact from '../components/IsotopeReact'
 
 const Portfolio = () => {
     const title = 'Portfolio'
@@ -53,6 +53,12 @@ const Portfolio = () => {
             slug: 'Other'
         }
     ]
+
+    // Lazy load to prevent SSR
+    const IsotopeReact = dynamic(
+        () => import('../components/IsotopeReact'),
+        {ssr: false, loading: () => <p>Loading Gallery...</p>}
+    )
 
     return (
         <Layout title={title}>
