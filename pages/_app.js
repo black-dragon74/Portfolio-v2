@@ -15,7 +15,7 @@ function MyApp({Component, pageProps}) {
             easing: "ease-in-out-back",
             once: true
         });
-    })
+    }, [])
 
     return <Component {...pageProps} />
 }

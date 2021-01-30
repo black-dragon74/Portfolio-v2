@@ -26,8 +26,9 @@ header.header {
       margin: 0;
       padding: 0;
       font-weight: 600;
-      -moz-text-align-last: center;
-      text-align-last: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       font-family: "Poppins", sans-serif;
 
       a {
