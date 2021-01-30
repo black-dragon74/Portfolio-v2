@@ -10,6 +10,9 @@
     position: relative;
     z-index: 2;
     min-width: 300px;
+    max-width: 350px;
+    overflow: hidden;
+    text-align: center;
   }
 
   h1 {
