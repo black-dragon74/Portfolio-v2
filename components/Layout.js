@@ -2,7 +2,8 @@ import Header from './Header'
 import NavBar from './NavBar'
 import PropTypes from 'prop-types'
 import ScrollToTop from './ScrollToTop'
-import {useEffect} from "react";
+import {useEffect} from 'react'
+import Footer from './Footer'
 
 const Layout = ({title, children}) => {
 
@@ -31,6 +32,8 @@ const Layout = ({title, children}) => {
 
             {/* Shown and hidden automatically on scroll events */}
             <ScrollToTop/>
+
+            <Footer/>
         </>
     )
 }
