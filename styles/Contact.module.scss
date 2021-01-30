@@ -1,0 +1,153 @@
+@use "base";
+
+.contact {
+  padding-bottom: 130px;
+
+  .info {
+    padding: 30px;
+    background: base.$white;
+    width: 100%;
+    box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
+
+    i {
+      font-size: 20px;
+      color: #149ddd;
+      float: left;
+      width: 44px;
+      height: 44px;
+      background: #dff3fc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50px;
+      transition: all 0.3s ease-in-out;
+    }
+
+    h4 {
+      padding: 0 0 0 60px;
+      font-size: 22px;
+      font-weight: 600;
+      margin-bottom: 5px;
+      color: #050d18;
+    }
+
+    p {
+      padding: 0 0 10px 60px;
+      margin-bottom: 20px;
+      font-size: 14px;
+      color: #173b6c;
+    }
+
+    .email {
+      p {
+        padding-top: 5px;
+      }
+    }
+
+    .email, .address, .phone {
+      &:hover {
+        i {
+          background: #149ddd;
+          color: base.$white;
+        }
+
+      }
+    }
+  }
+
+  .phpEmailForm {
+    width: 100%;
+    padding: 30px;
+    background: base.$white;
+    box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
+
+    .formGroup {
+      padding-bottom: 8px;
+    }
+
+    .validate {
+      display: none;
+      color: red;
+      margin: 0 0 15px 0;
+      font-weight: 400;
+      font-size: 13px;
+    }
+
+    .errorMessage {
+      display: none;
+      color: base.$white;
+      background: #ed3c0d;
+      text-align: left;
+      padding: 15px;
+      font-weight: 600;
+
+      br + br {
+        margin-top: 25px;
+      }
+    }
+
+    .sentMessage {
+      display: none;
+      color: base.$white;
+      background: #18d26e;
+      text-align: center;
+      padding: 15px;
+      font-weight: 600;
+    }
+
+    .loading {
+      display: none;
+      background: base.$white;
+      text-align: center;
+      padding: 15px;
+
+      &:before {
+        content: "";
+        display: inline-block;
+        border-radius: 50%;
+        width: 24px;
+        height: 24px;
+        margin: 0 10px -6px 0;
+        border: 3px solid #18d26e;
+        border-top-color: #eee;
+        animation: animateLoading 1s linear infinite;
+      }
+    }
+
+    input, textarea {
+      border-radius: 0;
+      box-shadow: none;
+      font-size: 14px;
+    }
+
+    input {
+      height: 44px;
+    }
+
+    textarea {
+      padding: 10px 12px;
+    }
+
+    button[type="submit"] {
+      background: #149ddd;
+      border: 0;
+      padding: 10px 24px;
+      color: base.$white;
+      transition: 0.4s;
+      border-radius: 4px;
+
+      &:hover {
+        background: #37b3ed;
+      }
+    }
+  }
+}
+
+@keyframes animateLoading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
