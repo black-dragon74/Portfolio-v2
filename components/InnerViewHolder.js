@@ -14,7 +14,7 @@ const InnerViewHolder = ({children}) => {
 }
 
 InnerViewHolder.propTypes = {
-    children: PropTypes.object.isRequired
+    children: PropTypes.any
 }
 
 export default InnerViewHolder
