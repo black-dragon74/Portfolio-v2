@@ -27,6 +27,11 @@ const IsotopeReact = ({items}) => {
                 })
             )
         )
+
+        return () => {
+            isotope.destroy()
+        }
+        
     }, [])   // Run this only once pls
 
     useEffect(() => {
