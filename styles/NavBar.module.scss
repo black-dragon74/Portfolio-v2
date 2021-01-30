@@ -1,7 +1,7 @@
 @use 'base';
 
 // Begin nav header
-#header {
+header.header {
   position: fixed;
   top: 0;
   left: 0;
@@ -71,7 +71,7 @@
         }
 
         &:hover.instagram {
-          background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+          background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
         }
       }
     }
@@ -170,7 +170,7 @@
 .mobileNavActive {
   overflow: hidden;
 
-  #header {
+  header.header {
     left: 0;
   }
 

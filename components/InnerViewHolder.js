@@ -7,7 +7,7 @@ import PropTypes from 'prop-types'
 
 const InnerViewHolder = ({children}) => {
     return (
-        <main id={styles.main}>
+        <main id="main" className={styles.main}>
             {children}
         </main>
     )

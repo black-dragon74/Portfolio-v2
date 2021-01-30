@@ -52,7 +52,7 @@ const NavBar = () => {
                 <i className={"icofont-navigation-menu"}/>
             </button>
 
-            <header id={styles.header}>
+            <header id="header" className={styles.header}>
                 <div className="d-flex flex-column">
                     <div className={styles.profile}>
                         <img src='/assets/img/profile-img.jpg' className={"rounded-circle img-fluid"} alt="Profile"/>
