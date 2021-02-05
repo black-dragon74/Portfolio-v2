@@ -29,7 +29,10 @@ const IsotopeReact = ({items}) => {
         )
 
         return () => {
-            isotope.destroy()
+            // As isotope is a state var, React would dispose it off automatically
+            // In such cases, calling destroy manually will result in exceptions
+            if (isotope)
+                isotope.destroy()
         }
         
     }, [])   // Run this only once pls
